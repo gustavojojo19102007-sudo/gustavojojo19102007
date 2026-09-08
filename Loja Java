@@ -1,0 +1,67 @@
+import java.util.Scanner;
+public class Execicio_4 {
+    public static void main(String[] arg) {
+        double Saldo = 2000;
+        int opcao;
+        Scanner scanner = new Scanner(System.in);
+        do {
+            System.out.println("==================");
+            System.out.println("    JAVA LOJA");
+            System.out.println("==================");
+            System.out.println("1-Compra teclado");
+            double teclado = 150.0;
+            System.out.println("2-Compra mouse");
+            double mouse = 80.0;
+            System.out.println("3-Compra monitor");
+            double monitor = 900.0;
+            System.out.println("4-Deposita dinheiro");
+            System.out.println("5-Ver saldo");
+            System.out.println("6-Sair");
+            System.out.println("Qual opção:");
+            opcao = scanner.nextInt();
+            switch (opcao) {
+                case 1:
+                    if (Saldo >= teclado) {
+                        Saldo -= teclado;
+                        System.out.println("Comprado!");
+                        System.out.println("Saldo atual R$" + Saldo);
+                        break;
+                    } else {
+                        System.out.println("Saldo insuficiente");
+                    }
+                    break;
+                case 2:
+                    if (Saldo >= mouse) {
+                        Saldo -= mouse;
+                        System.out.println("Comprado!");
+                        System.out.println("Saldo atual R$" + Saldo);
+                        break;
+                    } else {
+                        System.out.println("Saldo insuficiente");
+                    }
+                    break;
+                case 3:
+                    if (Saldo >= monitor) {
+                        Saldo -= monitor;
+                        System.out.println("Comprado!");
+                        System.out.println("Saldo atual R$" + Saldo);
+                    } else {
+                        System.out.println("Saldo insuficiente");
+                        break;
+                    }
+                case 4:
+                    System.out.println("Deposito:");
+                    double deposit1 = scanner.nextDouble();
+                    Saldo+=deposit1;
+                    System.out.println("Deposito concluido!!!");
+                    System.out.println("Saldo atual:R$" + Saldo);
+                    break;
+                case 5:
+
+                    System.out.println("Seu saldo:R$" + Saldo);
+            }
+        } while (opcao != 6);
+        System.out.println("Obrigado pelas compras");
+        scanner.close();
+    }
+}
